@@ -1,0 +1,5 @@
+1 ) logitech usb keyboard 2.0 with backlit led keys | Rs 500
+2 ) i ball dual keyboard with chiclet dual layer keys | Rs  350  
+3 )  dell standard keyboard with special keys  | Rs 700
+
+`tail -n $in example.txt| head -1 | cut -d '|' -f 2`
