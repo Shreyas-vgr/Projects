@@ -1,0 +1,47 @@
+README
+
+INTRODUCTION
+
+This is a simple example for ZMQ's push-pull sockets in python. The application consists of a producer and consumer. 
+The producer generates events that are pushed to the consumers connected to it.
+The consumers pull the events created by the producer, and diplay them.
+The producer uses a round-robin approach to distribute the events with all the consumers.
+------------------------------------------------------------------------------------------------------------------------------------------
+PRE-REQUISITES
+
+In order to run this application, the latest stable version of ZeroMQ along with the python language bindings need to be installed 
+in all the machines deploying this application. The full instructions for installation can be found in:
+
+ZeroMQ
+http://zeromq.org/intro:get-the-software
+
+Python-ZeroMQ bindings:
+http://zeromq.org/bindings:python
+
+------------------------------------------------------------------------------------------------------------------------------------------
+DEPLOYMENT
+
+To deploy this application:-
+
+1. Launch the producer either as:-
+	
+		python producer.py <port_no>				(assuming the host is localhost)
+		
+	OR
+		python producer.py <host_name> <port_no>
+		
+2. Once the producer is live, launch the subscriber either as:-
+		
+		python consumer.py <port_no>				(assuming the host is localhost)
+		
+	OR
+		python consumer.py <host_name> <port_no>
+		
+	Multiple consumers can pull from the same producer. To observe the round robin distribution, launch multiple consumers.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+PREPARED BY
+
+Roll nos. 11CO82-11CO94
+6th sem, B.tech, CSE
+

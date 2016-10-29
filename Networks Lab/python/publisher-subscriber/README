@@ -1,0 +1,54 @@
+README
+
+INTRODUCTION
+
+This is an example for an application of ZMQ's publisher-subscriber sockets in python. The application provides weather service
+where the server continuously generates the current temperatures for a given set of cities. The subscriber can subscribe to receive the weather
+updates of one city. The subscriber application finally computes the mean temperature based on 5 readings from the weather server.
+
+However, the client first needs to check if the desired city exists, so it first sends a request to the city check server (using request-reply)
+if the given city exists in the weather server. If it does, then the client subscribes to that city with weather server.
+Otherwise this city check service suggests a list of other cities that client could subscribe to.
+
+All the cities are read from the in_cities.txt file located in the servers' context.
+------------------------------------------------------------------------------------------------------------------------------------------
+PRE-REQUISITES
+
+In order to run this application, the latest stable version of ZeroMQ along with the python language bindings need to be installed 
+in all the machines deploying this application. The full instructions for installation can be found in:
+
+ZeroMQ
+http://zeromq.org/intro:get-the-software
+
+Python-ZeroMQ bindings:
+http://zeromq.org/bindings:python
+
+------------------------------------------------------------------------------------------------------------------------------------------
+DEPLOYMENT
+
+To deploy this application:-
+
+1. Launch the check city request-reply server either as:-
+	
+		python city_check_server.py <port_no>				(assuming the host is localhost)
+		
+	OR
+		python city_check_server.py <host_name> <port_no>
+		
+2. Then launch the weather publisher service either as:-
+		
+		python weather_server.py <port_no>				(assuming the host is localhost)
+		
+	OR
+		python weather_server.py <host_name> <port_no>
+		
+3. Then launch the client which will take a city name as input from STDIN and then subscribe, if the city exists
+
+		python weather_client.py <city_check_host_name> <city_check_port_no> <subscriber_host_name> <subscriber_port_no>
+------------------------------------------------------------------------------------------------------------------------------------------
+PREPARED BY
+
+Roll nos. 11CO82-11CO94 
+6th sem, B.tech, CSE
+
+------------------------------------------------------------------------------------------------------------------------------------------

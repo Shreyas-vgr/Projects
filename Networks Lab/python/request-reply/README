@@ -1,0 +1,45 @@
+README
+
+INTRODUCTION
+
+This is a simple example for ZMQ's request-reply sockets in python. The application consists of a simple server-client setup. 
+The server is launched and the client connects to it at a pre-assigned port.
+The client requests and sends the message "Hello" to the server, and the server replies with the message 'World from Hello'
+------------------------------------------------------------------------------------------------------------------------------------------
+PRE-REQUISITES
+
+In order to run this application, the latest stable version of ZeroMQ along with the python language bindings need to be installed 
+in all the machines deploying this application. The full instructions for installation can be found in:
+
+ZeroMQ
+http://zeromq.org/intro:get-the-software
+
+Python-ZeroMQ bindings:
+http://zeromq.org/bindings:python
+
+------------------------------------------------------------------------------------------------------------------------------------------
+DEPLOYMENT
+
+To deploy this application:-
+
+1. Launch the server either as:-
+	
+		python server.py <port_no>				(assuming the host is localhost)
+		
+	OR
+		python server.py <host_name> <port_no>
+		
+2. Once the server is live, launch the client application either as:-
+		
+		python client.py <port_no>				(assuming the host is localhost)
+		
+	OR
+		python client.py <host_name> <port_no>
+		
+
+------------------------------------------------------------------------------------------------------------------------------------------
+PREPARED BY
+
+Roll nos. 11CO82-11CO94
+6th sem, B.tech, CSE
+
