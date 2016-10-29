@@ -1,4 +1,3 @@
 Projects
 ========
-
-Shreyas :My college projects
+List of projects
