@@ -1,0 +1,45 @@
+\documentclass{article} % Default font size and paper size
+\usepackage[papersize={8.5in,11in}]{geometry}
+\usepackage{fontspec} % For loading fonts
+\defaultfontfeatures{Mapping=tex-text}
+
+\usepackage{xunicode,xltxtra,url,parskip} % Formatting packages
+
+\usepackage[usenames,dvipsnames]{xcolor} % Required for specifying custom colors
+
+%\usepackage[big]{layaureo} % Margin formatting of the A4 page, an alternative to layaureo can be \usepackage{fullpage}
+\usepackage{fullpage}
+% To reduce the height of the top margin uncomment: \addtolength{\voffset}{-1.3cm}
+
+\usepackage{hyperref} % Required for adding links	and customizing them
+\definecolor{linkcolour}{rgb}{0,0.2,0.6} % Link color
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolor} % Set link colors throughout the document
+
+\usepackage{titlesec} % Used to customize the \section command
+\titleformat{\section}{\Large\scshape\raggedright}{}{0.4em}{}[\titlerule] % Text formatting of sections
+\titlespacing{\section}{0pt}{-10pt}{-2pt} % Spacing around sections
+\addtolength{\textheight}{+5in}
+\addtolength{\voffset}{-1.8cm}
+\textwidth=+7in
+\hoffset=-.35in
+\usepackage{textcase}
+\begin{document}
+\pagestyle{empty} % Removes page numbering
+
+\font\fb=''[cmr10]'' % Change the font of the \LaTeX command under the skills section
+
+%   NAME
+{\centering{\LARG \textsc{Shreyas Govindaraju}}\par} % Your name
+%	CONTACT INFORMATION
+\input{Contact.tex}
+%	EDUCATION INFORMATION
+\input{Education.tex}
+\vspace{-0.3cm}
+%   WORK EXPERIENCE
+\input{Work.tex}
+\vspace{-0.2cm}
+%   PROJECTS
+\input{Projects.tex}
+%   SKILLS
+\input{Technical_Skills.tex}
+\end{document}
